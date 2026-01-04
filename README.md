@@ -49,7 +49,7 @@
 - **Top K**: Limits to K most probable tokens
 - **Top P (Nucleus)**: Limits to tokens comprising top P% probability mass
 
-**Non-obvious**: Default values vary significantly by model - always check model docs.
+**Note**: Default values vary significantly by model - always check model docs.
 
 ---
 
@@ -113,7 +113,7 @@ User Query → Model → Tool Request → Your Code Executes → Tool Result →
 
 **Security**: No public internet traversal - stays on AWS internal network.
 
-**Non-obvious**: Can route to regions NOT manually enabled in your account.
+**Important**: Can route to regions NOT manually enabled in your account.
 
 ---
 
@@ -314,7 +314,7 @@ When you need control over execution:
 3. Your app executes action
 4. Send results back with same `invocationId`
 
-**Non-obvious**: If `returnControlInvocationResults` included, `inputText` is ignored.
+**Note**: If `returnControlInvocationResults` included, `inputText` is ignored.
 
 ---
 
@@ -597,7 +597,7 @@ User Input → Parallel Policy Evaluation → BLOCKED (no inference charges) OR 
 | Llama 3.1 | 5 | 1 (fixed) | Wide learning rate range |
 | Nova | 2 | - | Warmup steps |
 
-**Non-obvious**:
+**Key Details**:
 - Claude has automatic early stopping (overfitting prevention)
 - Llama batch size is LOCKED at 1
 - Each epoch multiplies token processing cost
@@ -657,7 +657,7 @@ Directed node-based workflows: Input → Processing Nodes → Output
 | | Lambda | Custom code |
 | | Inline Code | Python in-flow (max 5 nodes) |
 
-**Non-obvious**:
+**Key Details**:
 - Iterator is SEQUENTIAL, not parallel
 - Inline Code NOT supported in async execution
 - S3 Retrieval requires UTF-8 encoding
